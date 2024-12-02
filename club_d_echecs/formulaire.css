@@ -1,0 +1,123 @@
+html, body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.background{
+    position: fixed;
+    top: 0%;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/jeu_d_echecs.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+.form-container{
+    position: relative;
+    z-index: 1;
+    width: 500px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+h1{
+    margin-bottom: 20px;
+}
+
+.form-header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label{
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+input[type="text"], input[type="email"] {
+    width: 95%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus {
+    border: 1px solid #555;
+    outline: none;
+}
+
+select {
+    width: 95%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #4CAF50; /* Bordure verte */
+    border-radius: 8px; /* Coins arrondis */
+    background-color: white;
+    color: #333; /* Couleur du texte */
+    appearance: none; /* Cache la flèche par défaut du select */
+    -webkit-appearance: none; /* Pour les navigateurs Webkit */
+    -moz-appearance: none; /* Pour Firefox */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" fill="none" stroke="black" stroke-width="2"/></svg>'); /* Flèche personnalisée */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 10px;
+    cursor: pointer;
+}
+
+/* Style de la flèche du select en hover */
+select:hover {
+    border-color: #45a049; /* Bordure un peu plus foncée */
+}
+
+#autre_profession{
+    width: 95%;
+    padding: 10px;
+    margin: 8px 0;
+    
+    border-radius: 4px;
+}
+
+#autre_profession:focus{
+    border: 1px solid #555;
+    outline: none;
+}
+
+textarea{
+    width: 95%;
+
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 20px auto 0 auto;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 50%;
+    
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+    
+}
+
+
+

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chargement...</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        #loader {
+            width: 100%;
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        #progress {
+            height: 100%;
+            width: 0; /* Début à 0% */
+            background: linear-gradient(90deg, #76c7c0, #ff6f61);
+            background-size: 200% 100%;
+            animation: shine 1.5s infinite, loading 3s forwards; /* Animation pour la barre */
+            position: relative;
+        }
+
+        /* Animation pour la barre de chargement */
+        @keyframes loading {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        /* Animation pour faire scintiller la barre */
+        @keyframes shine {
+            0% {
+                background-position: -200px 0;
+            }
+            100% {
+                background-position: 200px 0;
+            }
+        }
+        
+        /* Style pour l'icône de chargement */
+        #spinner {
+            margin-bottom: 15px;
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #76c7c0;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Animation de rotation pour l'icône */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Texte d'état de chargement */
+        #loading-text {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+    <script>
+        // Rediriger après 3 secondes
+        document.addEventListener('DOMContentLoaded', function(){ 
+            var textlength= sessionStorage.getItem('motivations').length;
+            console.log('Longeur de notre texte: ' + textlength);
+            setTimeout(function() {
+                if (textlength < 1) {
+                        window.location.href='Renvoi.html'; 
+                } else {
+                        window.location.href='inscription.php';       
+                };
+            }, 3000);
+            console.log('Coucou');
+        }); // Ajustez le temps selon la durée de l'animation
+    </script>
+</head>
+<body>
+    <h1>Traitement de votre demande en cours...</h1>
+    <div id="spinner"></div> <!-- Icône de chargement -->
+    <div id="loader">
+        <div id="progress"></div>
+    </div>
+    <div id="loading-text">Veuillez patienter...</div> <!-- Texte d'état -->
+</body>
+</html>
